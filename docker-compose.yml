@@ -6,8 +6,9 @@ services:
       context: ./
     container_name: nextjs_app
     restart: always
-    ports:
-      - "3000:3000"
+    # Do no expose the port to the host machine
+    # ports:
+    #   - "3000:3000"
     environment:
       - NODE_ENV=production
       - HOST=0.0.0.0
@@ -19,8 +20,9 @@ services:
       context: ./api
     container_name: flask_api
     restart: always
-    ports:
-      - "5328:5328"
+    # Do not expose the port to the host machine
+    # ports:
+    #   - "5328:5328"
     networks:
       - app-network
 
